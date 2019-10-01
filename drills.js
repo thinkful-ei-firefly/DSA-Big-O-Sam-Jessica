@@ -20,6 +20,17 @@ function countSheep (n) {
   }
 }
 
+//Linear
+
+function countSheepIt (n) {
+  for (let i=n; i>=0; i--) {
+    if (i===0) console.log('All sheep jumped over the fence')
+    else console.log(`${i}: Another sheep jumps over the fence`)
+  }
+}
+
+//linear
+
 
 // 2. Power Calculator
 // Write a function called powerCalculator() that takes two parameters, an integer as a base, and another integer as an exponent. The function returns the value of the base raised to the power of the exponent. Use only exponents greater than or equal to 0 (positive numbers)
@@ -41,6 +52,21 @@ function powerCalculatorRec (base, exponent) {
   }
 }
 
+//linear - proportional to the exponent
+
+function powerCalculatorRecIt (base, exponent) {
+  let result = 1
+  for (let i=0; i<exponent; i++) {
+    result *= base
+  }
+  return result
+}
+
+//linear - proportional to the exponent
+
+
+
+
 // 3. Reverse String
 // Write a function that reverses a string. Take a string as input, reverse the string, and return the new string.
 
@@ -53,6 +79,8 @@ function reverseString (string) {
     return ''
   }
 }
+
+// linear
 
 
 // 4. nth Triangular Number
@@ -73,6 +101,8 @@ function nthTriangularNumber (n) {
     return (n + nthTriangularNumber(n-1))
   }
 }
+// linear
+
 
 // 5. String Splitter
 // Write a recursive function that split a string based on a separator (similar to String.prototype.split). 
@@ -91,6 +121,7 @@ function stringSplitter (string, character) {
     return string[0] + stringSplitter(string.slice(1), character)
   }
 }
+// linear - proportional to the string
 
 // 6. Fibonacci
 // Write a recursive function that prints the Fibonacci sequence of a given number. 
@@ -127,6 +158,7 @@ function fibSequenceRecursive (n) {
 
   console.log(returnSequence)
 }
+//exponential
 
 // 7. Factorial
 // Write a recursive function that finds the factorial of a given number. 
@@ -138,3 +170,4 @@ function factorial(n) {
     return 1
   } else return (n*factorial(n-1))
 }
+// linear
