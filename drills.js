@@ -82,6 +82,16 @@ function reverseString (string) {
 
 // linear
 
+function reverseStringIt (string) {
+  let reversed = '';
+  for (let i=1; i<=string.length; i++) {
+    reversed += string[string.length-i];
+  }
+  return reversed;
+}
+
+// linear
+
 
 // 4. nth Triangular Number
 // Calculate the nth triangular number. A triangular number counts the objects that can form an equilateral triangle. The nth triangular number is the number of dots composing a triangle with n dots on a side, and is equal to the sum of the n natural numbers from 1 to n. This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45.
@@ -100,6 +110,16 @@ function nthTriangularNumber (n) {
   } else {
     return (n + nthTriangularNumber(n-1))
   }
+}
+// linear
+
+
+function nthTriangularNumberIt (n) {
+  let triangle = 0;
+  for (let i=0; i<=n; i++) {
+    triangle += i;
+  }
+  return triangle;
 }
 // linear
 
@@ -123,22 +143,22 @@ function stringSplitter (string, character) {
 }
 // linear - proportional to the string
 
+function stringSplitterIt (string, character) {
+  let stringCopy = '';
+  for (let i=0; i<string.length; i++) {
+    if (string[i] !== character) stringCopy += string[i];
+  }
+  return stringCopy;
+}
+
+// linear proportional to string
+
 // 6. Fibonacci
 // Write a recursive function that prints the Fibonacci sequence of a given number. 
 // The Fibonacci sequence is a series of numbers in which each number is the sum of the 2 preceding numbers. 
 // For example, the 7th Fibonacci number in a Fibonacci sequence is 13. The sequence looks as follows: 1, 1, 2, 3, 5, 8, 13.
 
-function fibonacci (n) {
-  let returnSequence = [];
-  for (let i=0; i<n; i++) {
-    if (i <= 1) {
-      returnSequence[i] = 1;
-    } else {
-      returnSequence[i] = returnSequence[i-1] + returnSequence[i-2];
-    }
-  }
-  return returnSequence;
-}
+
 
 function fibRecursive (n) {
   if (n<1) {
@@ -160,6 +180,20 @@ function fibSequenceRecursive (n) {
 }
 //exponential
 
+function fibonacciIt (n) {
+  let returnSequence = [];
+  for (let i=0; i<n; i++) {
+    if (i <= 1) {
+      returnSequence[i] = 1;
+    } else {
+      returnSequence[i] = returnSequence[i-1] + returnSequence[i-2];
+    }
+  }
+  return returnSequence;
+}
+
+//linear
+
 // 7. Factorial
 // Write a recursive function that finds the factorial of a given number. 
 // The factorial of a number can be found by multiplying that number by each number between itself and 1. 
@@ -171,3 +205,13 @@ function factorial(n) {
   } else return (n*factorial(n-1))
 }
 // linear
+
+function factorialIt (n) {
+  let result = 1;
+  for (let i=n; i>0; i--) {
+    result *= i;
+  }
+  return result;
+}
+
+//linear
